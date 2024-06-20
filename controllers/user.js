@@ -196,14 +196,14 @@ function forgotpassword(req, res) {
 
 async function getuserforforgotpassword(req, res) {
     let email = req.body.email
-    console.log(email);
+    // console.log(email);
     let randomNumber = Math.floor(Math.random() * 1000000);
 
-    console.log(randomNumber);
+    // console.log(randomNumber);
 
     let user = await usermodel.findOne({ email });
 
-    console.log(user);
+    // console.log(user);
 
 
     if (!user) return res.status(404).send('User not found')
@@ -212,7 +212,7 @@ async function getuserforforgotpassword(req, res) {
         if (randomNumber) {
             user.OTP = randomNumber;
             await user.save();
-            console.log(user);
+            // console.log(user);
         }
 
         // assign jwt randomNumber
@@ -234,7 +234,7 @@ async function getuserforforgotpassword(req, res) {
             html: `<h1> you otp is ${randomNumber}</h1>`
 
         })
-        console.log('email sent');
+        // console.log('email sent');
     }
 
     sendmail()
@@ -275,7 +275,7 @@ async function updatepassword(req, res) {
 
                 user.password = hash
                 user.save()
-                console.log(user);
+                // console.log(user);
             })
 
             // res.status(200).redirect('/')
@@ -300,33 +300,6 @@ async function postcontact(req, res) {
 
 }
 
-// async function follow(req, res) {
-//     let id = req.params.id
-
-//     let blog = await blogModel.findOne({ _id: id })
-
-//     let userid = blog.user._id
-
-//     let currentuser = await usermodel.findOne({_id:req.user.id})
-
-//     let user = await usermodel.findOne({ _id: userid }).populate('followers')
-//     if (user.followers.indexOf(req.user.id) === -1) {
-//         user.followers.push(req.user.id);
-//         currentuser.following.push(user.id)
-//     }
-//     else {
-//         user.followers.splice(user.followers.indexOf(currentuser.id), 1);
-//         currentuser.following.splice(req.user.following.indexOf(user.id), 1);
-//     }
-//     await user.save();
-//     await currentuser.save();
-//     console.log(user);
-//     console.log(currentuser);
-
-//     res.status(200).redirect('/blog/homepage')
-
-
-// }
 
 async function follow(req, res) {
     try {
@@ -344,7 +317,7 @@ async function follow(req, res) {
             return res.status(404).json({ error: "Current user not found" });
         }
 
-        // Toggle follow/unfollow for the user
+        // Check follow/unfollow for the user
         const followerIndex = user.followers.indexOf(req.user.id);
         if (followerIndex !== -1) {
             // If already following, remove the current user from followers
@@ -355,7 +328,7 @@ async function follow(req, res) {
         }
         await user.save();
 
-        // Toggle follow/unfollow for the current user
+        // Check follow/unfollow for the current user
         const followingIndex = currentUser.following.indexOf(user._id);
         if (followingIndex !== -1) {
             // If already following, remove the user from following
@@ -373,97 +346,6 @@ async function follow(req, res) {
         res.status(500).json({ error: "Internal server error" });
     }
 }
-async function followfollowers(req, res) {
-    try {
-        const userId = req.params.id;
-
-        // Find the user to follow/unfollow
-        const user = await usermodel.findOne({ _id: userId });
-        if (!user) {
-            return res.status(404).json({ error: "User not found" });
-        }
-
-        // Find the current user
-        const currentUser = await usermodel.findOne({ _id: req.user.id });
-        if (!currentUser) {
-            return res.status(404).json({ error: "Current user not found" });
-        }
-
-        // Toggle follow/unfollow for the user
-        const followerIndex = user.followers.indexOf(req.user.id);
-        if (followerIndex !== -1) {
-            // If already following, remove the current user from followers
-            user.followers.splice(followerIndex, 1);
-        } else {
-            // If not following, add the current user to followers
-            user.followers.push(req.user.id);
-        }
-        await user.save();
-
-        // Toggle follow/unfollow for the current user
-        const followingIndex = currentUser.following.indexOf(user._id);
-        if (followingIndex !== -1) {
-            // If already following, remove the user from following
-            currentUser.following.splice(followingIndex, 1);
-        } else {
-            // If not following, add the user to following
-            currentUser.following.push(user._id);
-        }
-        await currentUser.save();
-
-        res.status(200).redirect(`/blog/myfollowers/${userId}`);
-
-    } catch (error) {
-        console.error("Error following/unfollowing user:", error);
-        res.status(500).json({ error: "Internal server error" });
-    }
-}
-async function followfollowing(req, res) {
-    try {
-        const userId = req.params.id;
-
-        // Find the user to follow/unfollow
-        const user = await usermodel.findOne({ _id: userId });
-        if (!user) {
-            return res.status(404).json({ error: "User not found" });
-        }
-
-        // Find the current user
-        const currentUser = await usermodel.findOne({ _id: req.user.id });
-        if (!currentUser) {
-            return res.status(404).json({ error: "Current user not found" });
-        }
-
-        // Toggle follow/unfollow for the user
-        const followerIndex = user.followers.indexOf(req.user.id);
-        if (followerIndex !== -1) {
-            // If already following, remove the current user from followers
-            user.followers.splice(followerIndex, 1);
-        } else {
-            // If not following, add the current user to followers
-            user.followers.push(req.user.id);
-        }
-        await user.save();
-
-        // Toggle follow/unfollow for the current user
-        const followingIndex = currentUser.following.indexOf(user._id);
-        if (followingIndex !== -1) {
-            // If already following, remove the user from following
-            currentUser.following.splice(followingIndex, 1);
-        } else {
-            // If not following, add the user to following
-            currentUser.following.push(user._id);
-        }
-        await currentUser.save();
-
-        res.status(200).redirect(`/blog/myfollowing/${userId}`);
-
-    } catch (error) {
-        console.error("Error following/unfollowing user:", error);
-        res.status(500).json({ error: "Internal server error" });
-    }
-}
-
 
 async function myfollowers(req, res) {
     let id = req.params.id
@@ -502,9 +384,7 @@ export {
     contact,
     postcontact,
     checkusername,
-    follow,followfollowing,
-    followfollowers,
- 
+    follow,
     myfollowing,
     myfollowers,
     aboutapp,

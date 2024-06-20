@@ -1,9 +1,8 @@
 import express from 'express';
-import blogModel from '../models/blog.js';
 import { addblog, addnewblog, viewblog ,myblogs, myprofile, updateprofile, addcomment, likes, editblog, updateblog, deleteblog, feed, deletecomment,} from '../controllers/blog.js';
 import upload from '../config/blog.js';
 import uploadprofile from '../config/multer.js';
-import { deleteReview, follow,followfollowers,followfollowing,homepage, logout, myfollowers, myfollowing, postnewreview, reviewapp } from '../controllers/user.js';
+import { deleteReview, follow,homepage, logout, myfollowers, myfollowing, postnewreview, reviewapp } from '../controllers/user.js';
 
 import isloggedin from '../auth/isloggedin.js'
 const blogRouter = express.Router();

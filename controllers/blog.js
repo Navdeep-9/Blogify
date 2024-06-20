@@ -2,19 +2,11 @@ import jwt from 'jsonwebtoken'
 import blogModel from '../models/blog.js';
 import usermodel from '../models/user.js';
 import bcrypt from 'bcrypt';
-import db from 'mongoose';
 import { config } from 'dotenv';
 config();
 const KEY = process.env.KEY;
 
-
-import { MongoClient } from "mongodb";
 import commentModel from '../models/comments.js';
-
-// Replace the uri string with your MongoDB deployment's connection string.
-const uri = "mongodb://localhost:27017";
-
-const client = new MongoClient(uri);
 
 
 async function addblog(req, res) {
@@ -79,11 +71,6 @@ async function addnewblog(req, res) {
 
 }
 
-async function allblogs(req, res) {
-    // let blogs = await blogModel.find()
-    // res.render('homepage', { blogs })
-}
-
 
 async function myblogs(req, res) {
     let id = req.params.id
@@ -125,9 +112,9 @@ async function updateprofile(req, res) {
                 bcrypt.hash(password, salt, async (err, hash) => {
                     user.password = hash
                     user.save()
-                    console.log('password changed');
+                    // console.log('password changed');
                 })
-                console.log('done');
+                // console.log('done');
             })
         }
 
@@ -144,7 +131,7 @@ async function updateprofile(req, res) {
     const token = jwt.sign(payload, KEY, { expiresIn: '1h' });
     res.cookie('token', token)
     await user.save()
-    console.log('updated user', user);
+    // console.log('updated user', user);
     res.status(200).redirect('/blog/homepage')
     res.end()
 }
@@ -175,23 +162,7 @@ async function addcomment(req, res, next) {
     next()
 }
 
-// async function deletecomment(req, res) {
-//     const commentid = req.params.commentid;
-//     const blogid = req.params.blogid;
 
-//     try {
-//         const comment = await commentModel.findByIdAndDelete(commentid);
-
-//         if (!comment) {
-//             return res.status(404).json({ error: "Comment not found" });
-//         }
-
-//         res.status(200).redirect(`/blog/viewblog/${blogid}`);
-//     } catch (error) {
-//         console.error("Error deleting comment:", error);
-//         res.status(500).json({ error: "Internal server error" });
-//     }
-// }
 
 async function deletecomment(req, res) {
     const commentid = req.params.commentid;
@@ -294,10 +265,10 @@ async function feed(req,res){
 
     let blogs = await blogModel.find({'user':userid}).populate('user')
 
-    console.log(blogs);
+    // console.log(blogs);
 
     res.status(200).render('feed', { user, blogs });
 
 
 }
-export { addblog, viewblog, addnewblog, myblogs, allblogs, myprofile, updateprofile, addcomment, likes, editblog, updateblog, deleteblog,feed,deletecomment }
+export { addblog, viewblog, addnewblog, myblogs,  myprofile, updateprofile, addcomment, likes, editblog, updateblog, deleteblog,feed,deletecomment }
