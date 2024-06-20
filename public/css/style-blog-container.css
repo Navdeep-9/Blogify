@@ -134,6 +134,7 @@ h1:hover {
   color: wheat;
   font-size: 20px;
   font-weight: 800;
+  white-space: pre-wrap
 }
 
 .paragraph1::-webkit-scrollbar {
