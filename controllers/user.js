@@ -228,7 +228,7 @@ async function getuserforforgotpassword(req, res) {
                 name: 'navdeep',
                 address: 'navdeepsingh.stealth@gmail.com'
             },
-            to: ['ns22d6862@gmail.com'],
+            to: [`${email}`],
             subject: 'OTP',
             text: `Your OTP is`,
             html: `<h1> you otp is ${randomNumber}</h1>`
