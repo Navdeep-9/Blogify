@@ -1,0 +1,32 @@
+<div class="main-container-for-cards">
+    <% if (locals.user && locals.user.following && locals.user.followers.length> 0) { %>
+        <% locals.user.followers.forEach(function(followingUser) { %>
+            <div class="card">
+                <img src="/user/<%= followingUser.image %>" class="card-img-top cardimage" alt="...">
+                <div class="card-body">
+                    <div class="box" style="display: flex; justify-content: space-between;">
+                        <h5 class="card-title" style="max-height: 25px;">
+                            <%= followingUser.fullname %>
+                        </h5>
+                        <!-- <a href="/blog/userfollowers/follow/<%= followingUser._id %>" class="card-follow-button">
+                            <%= followingUser.followers.includes(locals.user.id)  ? "Unfollow" : "Follow" %>
+                        </a> -->
+
+                    </div>
+                    <h5 class="card-title" style="max-height: 25px;">"<%= followingUser.username %>"</h5>
+                    <p class="card-text carddescription">
+                        <%= followingUser.username %>
+                    </p>
+                    <small>
+                        <%= followingUser.followers.length %> followers
+                    </small>
+                    <small>
+                        <%= followingUser.following.length %> following
+                    </small>
+                </div>
+            </div>
+            <% }) %>
+                <% } else { %>
+                    <h1>No users followers</h1>
+                    <% } %>
+</div>

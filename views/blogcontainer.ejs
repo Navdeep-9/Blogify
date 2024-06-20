@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <link rel="stylesheet" href="/css/style-blog-container.css">
+  <link rel="shortcut icon" href="/default/favicon.ico" type="image/x-icon">
+  <% if(locals.Blog){ %>
+
+    <title>
+      <%= blog.title %>
+    </title>
+    <% } else{ %>
+      <title>deleted blog</title>
+
+      <% } %>
+
+</head>
+
+<body>
+  <% if(locals.blog){ %>
+    <div class="card-container" style="display: flex; flex-direction: column;">
+      <div class="container-for-full-blog">
+        <div class="img-container">
+          <img class="img" src="/blogs/<%= blog.image%>" alt="Image">
+        </div>
+        <h4 class="username">
+          <%= blog.username %>
+        </h4>
+        <h1 class="title">
+          <%= blog.title %>
+        </h1>
+        <div class="paragraph1">
+          <%= blog.details %>
+        </div>
+        <a href="/blog/homepage"><button class="homebutton">Home</button></a>
+        <% if (locals.user.id===blog.user.id ) { %>
+          <a href="/blog/editblog/<%=blog.id%>"><button class="editbutton">Edit</button></a>
+          <a href="/blog/deleteblog/<%=blog.id%>"><button class="deletebutton">Delete</button></a>
+          <% } %>
+  
+      </div>
+      <div class="commentheading">
+        <h1>Comments are here</h1>
+      </div>
+      <% if (locals.comments){ %>
+  
+  
+        <% comments.forEach(function(comment){ %>
+  
+          <div class="commentsection">
+            <div class="userimage">
+              <img src="/default/default.png" alt="">
+            </div>
+  
+            <div class="commentbody">
+              <h2>
+                <%=comment.userid.username%>
+              </h2>
+              <p class="commenttext">
+                <%=comment.details%>
+              </p>
+              <% if (locals.user.id===comment.userid.id || locals.user.id === blog.user.id  ) { %>
+                <a href="/blog/deletecomment/<%=blog.id%>/<%=comment.id%>"><button class="deletecommentbtn">Delete</button></a>
+                <% } %>
+            </div>
+          </div>
+  
+          <%}) %>
+            <% }%>
+              <% if(locals.user){ %>
+                <div class="commentsection">
+                  <div class="userimage">
+                    <img src="/default/default.png" alt="">
+                  </div>
+  
+                  <div class="commentbody">
+                    <form action="/blog/addcomment/<%=blog.id%>" method="post">
+                      <h4>
+                        <%=user.username%>
+                      </h4>
+                      <input type="text" class="commentvalue" placeholder="Enter Your Comment" name="detail">
+  
+                      <button type="submit" class="addcommentbtn">Add comment</button>
+                    </form>
+                  </div>
+                </div>
+  
+                <% } %>
+  
+    </div>
+    <% } else{ %>  
+      
+<div class="box" style="display: flex; justify-content: center; align-items: center; width: 100vw; height: 100vh; background-color: rgb(0, 0, 0);">
+  <a href="/blog/homepage"><button class="homebutton">Home</button></a>
+  <h1 style="color: white;">You have Deleted The Blog</h1>
+</div>
+   <% } %>
+
+</body>
+
+</html>

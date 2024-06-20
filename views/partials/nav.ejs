@@ -1,0 +1,41 @@
+<nav class="navbar">
+  <% if(locals.user){ %>
+    <div class="container">
+      <img src="/user/<%=user.image %>" style="width: 5rem; border-radius: 25%; ">
+      <nav class="navigation">
+        <a href="/">Home</a>
+        <a href="/blog/myprofile/<%=user.id%>">My Profile</a>
+        <a href="/blog/myblogs/<%=user.id%>">My Blogs</a>
+        <a href="/blog/addblog">Add Blog</a>
+        <a href="/blog/feed/<%=user.id%>">Feed</a>
+        <a href="/blog/myfollowers/<%=user.id%>">Followers</a>
+        <a href="/blog/myfollowing/<%=user.id%>">Following</a>
+      </nav>
+      <% } else{ %>
+        <img src="/default/default.png" style="width: 5rem; border-radius: 25%;">
+        <nav class="navigation">
+          <a href="/">Home</a>
+          <a href="/about">About</a>
+          <!-- <a href="/">Feed</a> -->
+          <a href="/contact">Contact</a>
+        </nav>
+        <% } %>
+          <% if(locals.user){ %>
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <%=user.fullname%>
+              </button>
+              <ul class="dropdown-menu" style="background: #565e64;">
+                <li><a class="dropdown-item" href="/blog/myprofile/<%=user.id%>">Profile</a></li>
+                <li><a class="dropdown-item" href="/blog/review">Review</a></li>
+                <li><a class="dropdown-item" href="/blog/logout">Logout</a></li>
+              </ul>
+            </div>
+            <% } else{ %>
+              <button class="btnLogin_popup login-btn">Login</button>
+              <% } %>
+                </ul>
+    </div>
+    </div>
+</nav>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            background: linear-gradient(45deg, black, transparent);
+            padding: 20px;
+            border-radius: 10px;
+            width: 100%;
+            height: 100vh;
+            /* max-width: 600px; */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .reviewheading h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .commentsection {
+            background: linear-gradient(45deg, #5a9b9b, rgb(56, 55, 55));
+
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            color: white;
+            position: relative;
+        }
+
+        .userimage img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+
+        .commentbody h2,
+        .commentbody h4 {
+            margin: 0;
+        }
+
+        .commentbody p {
+            margin: 5px 0 0;
+        }
+
+        .commentbody form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .commentbody input[type="text"] {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            position: relative;
+        }
+
+        .addcommentbtn {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .addcommentbtn:hover {
+            background-color: #0056b3;
+        }
+
+        .deletebtn {
+            position: absolute;
+            right: 10px;
+            top: 40%;
+            text-decoration: none;
+            color: wheat;
+            width: 100px;
+            display: flex;
+            background: linear-gradient(45deg, black, transparent);
+            justify-content: center;
+            height: 25px;
+            align-items: center;
+            border-radius: 25px;
+            font-size: larger;
+            transition: 1s;
+        }
+        .deletebtn:hover{
+            box-shadow: 4px 4px 4px cyan;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="reviewheading">
+            <h1>Reviews are here</h1>
+        </div>
+        <% if (locals.reviews) { %>
+            <% reviews.forEach(function(review) { %>
+                <div class="commentsection">
+                    <div class="userimage">
+                        <img src="/default/default.png" alt="User Image">
+                    </div>
+                    <div class="commentbody">
+                        <h2>
+                            <%= review.userid.username %>
+                        </h2>
+                        <p class="commenttext">
+                            <%= review.details %>
+                        </p>
+                        <% if (locals.user && locals.user.id===review.userid.id) { %>
+                            <a href="/blog/deletereview/<%= review.id %>" class="deletebtn">Delete</a>
+                            <% } %>
+                    </div>
+                </div>
+                <% }) %>
+                    <% } %>
+                        <% if (locals.user) { %>
+                            <div class="commentsection">
+                                <div class="userimage">
+                                    <img src="/default/default.png" alt="User Image">
+                                </div>
+                                <div class="commentbody">
+                                    <form action="/blog/addreview/<%= user.id %>" method="post">
+                                        <h4>
+                                            <%= user.username %>
+                                        </h4>
+                                        <input type="text" class="commentvalue" placeholder="Enter Your Review"
+                                            name="details">
+                                        <button type="submit" class="addcommentbtn">Add review</button>
+                                    </form>
+                                </div>
+                            </div>
+                            <% } %>
+    </div>
+</body>
+
+</html>

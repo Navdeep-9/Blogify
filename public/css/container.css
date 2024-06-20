@@ -1,0 +1,222 @@
+body {
+    min-height: 100vh;
+    background: linear-gradient(89deg, black, #2a2a2a);
+    /* background:  url(/images/akm.jpg) no-repeat; */
+    background-size: cover;
+    background-position: center;
+    max-width: 100vw;
+    backdrop-filter: blur(5px);
+}
+
+.navbar {
+    position: sticky;
+    top: 15px;
+    z-index: 1;
+    backdrop-filter: blur(31px);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 15px;
+}
+
+.mainnavbar {
+    background: #222222e7;
+    ;
+}
+
+.forgot-box-container {
+    width: 25%;
+    background: linear-gradient(45deg, #e1f5feb3, transparent);
+    padding: 30px;
+    border-radius: 15%;
+    box-shadow: 13px 22px 10px 8px #01010161;
+}
+
+.forgot-box-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    backdrop-filter: blur(10px);
+}
+
+.forgot-box-input {
+    background: transparent;
+    color: black;
+    font-size: 18px;
+    font-weight: 700;
+
+}
+
+.forgot-box-label {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.forgot-box-button {
+    background: linear-gradient(65deg, #0ad1d1, transparent);
+    color: black;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.login-btn {
+    width: 5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background: white;
+    color: black;
+    font-weight: 700;
+    transition-duration: 1s;
+}
+
+.login-btn:hover {
+    border-radius: 25%;
+    background: black;
+    color: white;
+    font-weight: 700;
+    box-shadow: 5px 5px 10px cyan;
+}
+
+.btnn {
+    width: 100%;
+    height: 45px;
+    background: #162938;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #fff;
+    font-weight: 500;
+    transition-duration: 2s;
+}
+
+.btnn:hover {
+    transition-duration: 1s;
+    transform: scale(1.02);
+    box-shadow:0px 0px 10px 8px #00ffff;
+}
+
+.container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/* navigartyion */
+
+.navigation a {
+    margin: 25px;
+    color: white;
+    position: relative;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.navigation a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    left: 0;
+    bottom: -4px;
+    background: #fff;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transition: transform .5s;
+    transform-origin: right;
+
+
+}
+
+.navigation a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+
+}
+
+.card {
+    width: 18rem;
+    color: white;
+    background: linear-gradient(90deg, black, #bebebe94);
+    box-shadow: 16px 13px 29px 12px black;
+    transition: 1s;
+}
+.card:hover {
+    transform: scale(1.1);
+    box-shadow: 9px 0px 26px 25px rgb(14 23 24);
+    z-index: 5;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.main-container-for-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    margin: 3rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-view-button {
+    display: flex;
+    width: 39%;
+    height: 52%;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom left, #4d4a4a, transparent);
+    color: wheat;
+    text-decoration: none;
+    border: none;
+    border-radius: 20px;
+    transition: 1s;
+}
+
+
+.card-view-button:hover {
+    transform: scale(1.07);
+    box-shadow: 2px 3px 5px cyan;
+}
+
+
+.card-follow-button {
+    display: flex;
+    width: 40%;
+    height: 52%;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom left, #140f0f, transparent);
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 20px;
+    transition: 1s;
+}
+
+.card-follow-button:hover {
+    transform: scale(1.07);
+    box-shadow: 2px 3px 5px cyan;
+}
+.likes {
+    display: flex;
+    margin-bottom: 8px;
+    text-decoration: none;
+    margin-left: 1px;
+}
+
+.carddescription{
+   max-height: 50px;
+   overflow-y: scroll;
+}
+.carddescription::-webkit-scrollbar{
+    display: none;
+
+}
+
+
+/* blogform css */
+

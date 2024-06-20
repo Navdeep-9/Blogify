@@ -1,0 +1,42 @@
+
+html {
+    /* height: 100%; */
+    margin: 0;
+}
+body {
+    background: linear-gradient(90deg, #0000003d, black);
+}
+
+.login_frm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10rem;
+    margin-bottom: 7rem;
+
+    /* height: 100vh; */
+}
+form label {
+    font-weight: 600;
+}
+a{
+    color:rebeccapurple;
+    font-weight: 600;
+    text-decoration: none;
+}
+.head{
+    color: black;
+}
+
+.nav-white-btns{
+    color: white;
+}
+
+.sendmessagebtn{
+    border: none;
+     background:linear-gradient(90deg, #00000047, #00000069);
+     border-radius: 15px;
+     font-size: 15px;
+     font-weight: 700;
+ }
+ 

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="/css/aboutstyle.css">
+    <link rel="shortcut icon" href="/default/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <nav>
+        <ul class="navbar">
+            <a href="/" class="homebtn">Home</a>
+            <li><a href="/review">Review</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Tools</a>
+                <div class="dropdown-content">
+                    <a href="https://www.w3schools.com/js/">JavaScript</a>
+                    <a href="https://nodejs.org/en">Node.js</a>
+                    <a href="https://www.npmjs.com/package/express">Express</a>
+                    <a href="https://www.mongodb.com/">MongoDb</a>
+                </div>
+            </li>
+            <li><a href="#help">Help</a></li>
+        </ul>
+    </nav>
+
+    <div class="main-container">
+        <div class="segment top-left"></div>
+        <div class="segment top-right"></div>
+        <div class="segment bottom-left"></div>
+        <div class="segment bottom-right"></div>
+        <br>
+        <br>
+        <div class="content">
+            <h1>About Our Social Media Platform</h1>
+            <p>
+                Introduction
+                My web application is a dynamic social media platform designed to provide users with an engaging and interactive experience. Built using a robust technology stack that includes HTML, CSS, JavaScript, Node.js, Express, MongoDB, and EJS, the platform allows users to share posts, like and comment on each other's content, and follow other users. Additionally, JWT (JSON Web Tokens) is used for secure authentication, ensuring that user data and interactions remain safe and private.
+                <br>
+            <ul class="unorderedlist">
+                <li>
+                    <b>HTML (HyperText Markup Language):</b> HTML serves as the backbone of the application, providing the structure and layout for the web pages. It ensures that the content is organized in a readable and accessible manner.
+                </li>
+                <li>
+                   <b> CSS (Cascading Style Sheets): </b>CSS is used to style the HTML elements, making the web application visually appealing. With CSS, the application features a responsive design that looks great on both desktop and mobile devices.
+                </li>
+                <li>
+                    <b>JavaScript:</b> JavaScript is employed for client-side scripting to create dynamic and interactive features. It handles real-time updates and user interactions, enhancing the user experience.
+                </li>
+                <li>
+                   <b> Node.js:</b> Node.js is a powerful server-side platform that runs JavaScript code outside of a browser. It is used for building the server-side logic of the application, ensuring efficient handling of client requests and database operations.
+                </li>
+                <li>
+                  <b>  Express:</b> Express is a minimal and flexible Node.js web application framework that provides a robust set of features for building web and mobile applications. It is used to create the server and define the routes for the application
+                </li>
+                <li>
+                  <b>  MongoDB:</b> MongoDB is a NoSQL database that stores the application's data in a flexible, JSON-like format. It is used to manage user accounts, posts, comments, and other essential data.
+                </li>
+                <li>
+                <b>    EJS (Embedded JavaScript Templating):</b> EJS is a templating language that lets you generate HTML markup with plain JavaScript. It is used to render dynamic content on the server side before sending it to the client.
+                </li>
+                <li>
+                <b>    JWT (JSON Web Tokens):</b> JWT is a compact, URL-safe means of representing claims to be transferred between two parties. It is used for secure user authentication, ensuring that only authorized users can access certain features of the application.
+                </li>
+            </ul>
+    
+            <br>
+            <h3>Key Features</h3>
+    
+            <ul>
+                <li>
+                   <b> User Registration and Authentication:</b> New users can sign up for an account using their email and password. Once registered, users can log in securely using JWT-based authentication, which ensures that their session remains secure.
+                </li>
+                <li><b>Posting Content: </b>Authenticated users can create and share posts with the community. Each post can contain text, images, or both, allowing users to express themselves creatively.</li>
+                <li>
+                <b>    Viewing Posts:</b> Users can view a feed of posts shared by the community. The feed is updated in real-time, ensuring that users always see the latest content.
+                </li>
+                <li>
+                   <b> Liking Posts:</b> Users can like posts to show their appreciation. The like count is updated instantly, providing immediate feedback to the content creators.
+                </li>
+                <li>
+                   <b> Commenting on Posts:</b> Users can comment on posts to engage in discussions or provide feedback. Comments are displayed below the respective posts, fostering interaction among users.
+                </li>
+                <li>
+                    <b>Following Users:</b> Users can follow other users to stay updated with their posts. This feature helps build a network of connections and ensures that users see content from people they are interested in.
+                </li>
+            </ul>
+            <br>
+            <h3>Implementation Details</h3>
+    
+            <ul>
+                <li>
+                <b>    Server-Side:</b> The server is built using Node.js and Express. It handles HTTP requests, interacts with the MongoDB database, and uses EJS to render dynamic HTML pages. The server also manages user authentication using JWT
+                </li>
+                <li>
+                 <b>   Client-Side: </b>The client-side code is written in HTML, CSS, and JavaScript. It handles user interactions, such as posting content, liking posts, and following users. AJAX is used for asynchronous data fetching, ensuring a smooth and responsive user experience.
+                </li>
+                <li>
+                <b>    Database: </b>MongoDB is used to store user data, posts, comments, likes, and follow relationships. The database schema is designed to efficiently handle the relationships between these entities.
+                </li>
+            </ul>
+            <br>
+            <h2>User Experience</h2>
+            <h4>
+                The application is designed to provide a seamless and enjoyable user experience. The responsive design ensures that the application looks great on any device, and the intuitive interface makes it easy for users to navigate and interact with the platform. Real-time updates and interactive features keep users engaged and encourage them to spend more time on the platform.
+            </h4>
+            
+            
+            </p>
+        </div>
+    </div>
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    const segments = document.querySelectorAll('.segment');
+    segments.forEach((segment, index) => {
+        segment.style.animationDelay = `${index + 1}s`;
+    });
+});
+    </script>
+</body>
+</html>

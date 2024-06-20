@@ -1,0 +1,251 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(to right, rgb(42, 42, 42), black);
+}
+
+.container-for-full-blog {
+  background: linear-gradient(89deg, black, #2a2a2a);
+  padding: 36px 36px;
+}
+
+@keyframes flowerBloom {
+  0% {
+    transform: scale(0) rotate(0deg);
+    opacity: 0;
+    box-shadow: none;
+  }
+
+  50% {
+    transform: scale(1.2) rotate(45deg);
+    opacity: 1;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  100% {
+    transform: scale(1) rotate(0deg);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+}
+
+@keyframes scaleEffect {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.title {
+  color: beige;
+  margin: 0 0 10px 0;
+  transition: transform 0.3s ease-in-out;
+  display: flex;
+  justify-content: center;
+}
+
+.img-container {
+  height: 300px;
+  width: 300px;
+  margin: 5% auto 20px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  overflow: hidden;
+  animation: flowerBloom 3s;
+}
+
+.img {
+  max-width: 100%;
+  max-height: 100%;
+  box-shadow: 0 13px 69px 50px #3a3636;
+}
+
+.homebutton {
+  background: linear-gradient(45deg, black, #878282);
+  color: wheat;
+  position: fixed;
+  width: 100px;
+  border-radius: 25px;
+  top: 1rem;
+  right: 5rem;
+}
+.editbutton{
+  background: linear-gradient(45deg, black, #878282);
+    color: wheat;
+    position: fixed;
+    width: 100px;
+    border-radius: 25px;
+    top: 3rem;
+    right: 5rem;
+}
+.deletebutton{
+  background: linear-gradient(45deg, black, #878282);
+    color: wheat;
+    position: fixed;
+    width: 100px;
+    border-radius: 25px;
+    top: 5rem;
+    right: 5rem;
+}
+
+#submitBtn {
+  display: flex;
+  width: 25%;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 40%;
+  background: linear-gradient(45deg, #6e6e6e, transparent);
+  color: wheat;
+  font-weight: 800;
+}
+
+.username {
+  font-style: italic;
+  font-weight: 600;
+  text-align: center;
+  color: white;
+}
+
+h1:hover {
+
+  animation: scaleEffect 2s
+}
+
+.paragraph1 {
+  overflow-y: scroll;
+  height: 400px;
+  width: 88%;
+  margin: 6%;
+  color: wheat;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.paragraph1::-webkit-scrollbar {
+  display: none;
+}
+
+.commentsection{
+  display: flex;
+  width: 99%;
+  margin: 10px;
+  padding: 15px;
+  background: wheat;
+  border-radius: 27px
+}
+
+.userimage{
+  width: 7%;
+  border-radius: 50%;
+  margin-top: 15px;
+}
+.userimage img{
+  max-width: 100%;
+  max-height: 100%;
+  box-sizing: border-box;
+  border-radius: 35%;
+ 
+}
+
+.commentbody{
+  width: 100%;
+  height: 5%;
+  margin-left: 20px;
+  padding: 6px;
+  position: relative;
+}
+.commenttext{
+  margin-top: 5px;
+  overflow-y: scroll;
+  height: 50px;
+}
+.commenttext::-webkit-scrollbar {
+  display: none;
+}
+.commentheading{
+  display: flex;
+    justify-content: center;
+    margin: 10px 0;
+    color: wheat;
+}
+
+.commentvalue{
+  width: 100%;
+  border: none;
+  height: 32px;
+  margin-bottom: 10px;
+  margin-top: 5px;
+  padding: 10px;
+  border-radius: 25px;
+}
+.addcommentbtn{
+  border: none;
+  width: 25%;
+  border-radius: 25px;
+  height: 25px;
+  background: burlywood;
+}
+
+.deletecommentbtn{
+  position: absolute;
+    right: 10px;
+    top: 40%;
+    height: 30px;
+    width: 100px;
+    border-radius: 25px;
+    font-size: larger;
+    color: white;
+    background: black;
+    transition: 1s;
+}
+.deletecommentbtn:hover{
+  box-shadow: 4px 4px 4px black;
+}
+
+/* style css */
+
+
+body,
+html {
+    height: 100%;
+    margin: 0;
+}
+
+.login_frm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.input {
+    background: transparent;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.input::-webkit-input-placeholder{
+    color: white;
+}
+.label{
+    color: white;
+    font-weight: 900;
+}
+
+

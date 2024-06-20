@@ -1,0 +1,42 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .projectimage {
+    padding: 20px;
+    background-color: rgb(68, 68, 67);
+    color: black;
+    font-size: medium;
+    border-radius: 5%;
+    margin-top: 10px;
+    width: 20%;
+    margin-bottom: 10px;
+  }
+
+  .heading {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-size: large;
+    font-family: sans-serif;
+  }
+
+  .projecturl {
+    background: transparent;
+    border: 2px solid white;
+    width: 25%;
+    margin-bottom: 10px;
+  }
+
+  .add-blog-container {
+    background: linear-gradient(58deg, black, #d8d8d8);
+  }
+
+  .add-blog-input {
+    background: linear-gradient(90deg, #5f5a5a, black);
+  }
+
+  .add-blog-input-file-and-button {
+    background: linear-gradient(90deg, black, #5c5c5c);
+  }

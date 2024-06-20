@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head.ejs') %>
+
+  <body data-bs-theme="dark" class="forgot-box-body">
+    <!-- navbar -->
+    <div class="forgot-box-container">
+      <form action="/otpsubmit" method="post">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label forgot-box-label">Enter Email</label>
+          <input type="email" class="forgot-box-input" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label forgot-box-label">Enter OTP</label>
+            <input  class="forgot-box-input" name="OTP" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+            <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+          </div>
+        <button type="submit" class="btn btn-primary forgot-box-button">Submit</button>
+      </form>
+
+    </div>
+
+    <%- include('./partials/scripts.ejs') %>
+
+  </body>
+
+</html>

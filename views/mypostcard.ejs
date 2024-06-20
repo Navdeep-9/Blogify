@@ -1,0 +1,46 @@
+<body>
+    <div class="main-container-for-cards">
+        <% blogs.forEach(function(blog){ %>
+
+            <div class="card">
+                <img src="/blogs/<%=blog.image%>" class="card-img-top cardimage" alt="...">
+                <div class="card-body">
+<div class="box" style="display: flex; justify-content: space-between;" >
+    <h5 class="card-title" style="max-height: 25px;"><%= blog.username %></h5>
+</div>            <h5 class="card-title" style="max-height: 25px;">"<%= blog.title %>"</h5>
+                    <p class="card-text carddescription">
+                        <%=blog.caption %>
+                    </p>
+                    <% if(locals.user){ %>
+                        <small>
+                            <%=blog.likes.length%> Likes
+                        </small>
+                        <small>
+                            <%=blog.comments.length%> comments
+                        </small>
+                        <a href="/blog/like/<%=blog.id%>" class="likes">
+                            <%= blog.likes.indexOf(user.id)===-1 ? "👍 Like" : " 👎 Unlike" %>
+                        </a>
+                        <% } else{ %>
+                            <h4>
+                                <%= blog.likes.length %>Likes
+                            </h4>
+                            <small>
+                                <%=blog.comments.length%> comments
+                            </small>
+
+                            <% } %>
+                                <a href="/blog/viewblog/<%=blog._id %>" class="card-view-button">View-More</a>
+                            
+                </div>
+            </div>
+            <% }) %>
+                <% if (locals.user) { %>
+                    <a href="/blog/addblog" class="card-view-button"
+                        style="margin:10px; margin-bottom: 1rem; height: 40px">Add
+                        Blog</a>
+                    <% } %>
+    </div>
+
+</body>
+

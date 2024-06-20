@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add blog</title>
+  <link rel="shortcut icon" href="/default/favicon.ico" type="image/x-icon">
+  <script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="/css/blogform.css">
+</head>
+
+<body>
+  <div class="w-full min-h-screen bg-zinc-900 text-white p-10 add-blog-container ">
+    <div class="w-full flex justify-end">
+      <a class="bg-red-500 rounded-md px-3 py-2 text-sm mb-5 inline-block add-blog-input" href="/blog/homepage">Home</a>
+    </div>
+
+    <h1 class="heading"> Add Your Blog</h1>
+
+    <form action="/blog/addblog/:<%= user.id %>" method="post" enctype="multipart/form-data">
+      <div class="container">
+        <textarea placeholder="Add title"
+          class="p-3 outline-none w-1/3  resize-none bg-transparent border-2 border-zinc-800 rounded-md add-blog-input"
+          maxlength="20" required name="title"></textarea>
+        <textarea placeholder="Add caption"
+          class="p-3 outline-none w-1/3  resize-none bg-transparent border-2 border-zinc-800 rounded-md add-blog-input"
+          style="display: block;" maxlength="100" required name="caption"></textarea>
+        <textarea placeholder="Add details"
+          class="p-3 outline-none w-1/3  resize-none bg-transparent border-2 border-zinc-800 rounded-md add-blog-input"
+          required name="details"></textarea>
+        <input class="projectimage add-blog-input-file-and-button" type="file" name="image" value="Add image" required>
+      </div>
+      <input class="px-3 py-2 bg-blue-500 block text-black text-5m rounded-md mt-2 w-40 add-blog-input-file-and-button"
+        type="submit" value="Add Blog" add-blog-input>
+    </form>
+
+</body>
+
+</html>
