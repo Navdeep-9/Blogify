@@ -92,19 +92,15 @@ body::-webkit-scrollbar {
     background: transparent;
     border: 2px solid rgba(255, 255, 255, .5);
     border-radius: 20px;
-    /* backdrop-filter: blur(35px); */
-    /* background: url(/images/bg4.jpg) no-repeat; */
     background-position: left;
     background-size: cover;
-    /* background-color: aqua;
-    background-blend-mode: multiply; */
-    background:linear-gradient(to bottom, black, #64caf4);
+    background:linear-gradient(to bottom, black, #5a5d5e);
     box-shadow: 0 0 30px rgba(0, 0, 0, .5);
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    transition: transform 1s ease-in-out, height .2s ease;
+    transition: transform .6s ease-in-out, height .2s ease;
     transform: scale(0);
     z-index: 1;
 
@@ -295,7 +291,7 @@ text-decoration: underline;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #162938;
+    background: rgb(28, 27, 27);
     color: #fff;
     font-size: xx-large;
     font-weight: 600;
