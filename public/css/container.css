@@ -17,6 +17,7 @@ body {
     justify-content: space-evenly;
     align-items: center;
     padding-top: 15px;
+    margin-left: -45px;
 }
 
 .mainnavbar {
@@ -96,7 +97,7 @@ body {
 .btnn:hover {
     transition-duration: 1s;
     transform: scale(1.02);
-    box-shadow:0px 0px 10px 8px #00ffff;
+    box-shadow: 0px 0px 10px 8px #00ffff;
 }
 
 .container {
@@ -143,6 +144,7 @@ body {
     box-shadow: 16px 13px 29px 12px black;
     transition: 1s;
 }
+
 .card:hover {
     transform: scale(1.1);
     box-shadow: 9px 0px 26px 25px rgb(14 23 24);
@@ -201,6 +203,7 @@ body::-webkit-scrollbar {
     transform: scale(1.07);
     box-shadow: 2px 3px 5px cyan;
 }
+
 .likes {
     display: flex;
     margin-bottom: 8px;
@@ -208,15 +211,25 @@ body::-webkit-scrollbar {
     margin-left: 1px;
 }
 
-.carddescription{
-   max-height: 50px;
-   overflow-y: scroll;
+.carddescription {
+    max-height: 25px;
+    overflow-y: scroll;
 }
-.carddescription::-webkit-scrollbar{
+
+.carddescription::-webkit-scrollbar {
     display: none;
 
 }
 
+.cardimage {
+    height: 168px;
+}
 
-/* blogform css */
 
+.appheading {
+    color: wheat;
+    font-family: ui-monospace;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+}

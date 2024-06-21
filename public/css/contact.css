@@ -4,7 +4,7 @@ html {
     margin: 0;
 }
 body {
-    background: linear-gradient(90deg, #0000003d, black);
+    background:linear-gradient(89deg, black, #2a2a2a)
 }
 
 .login_frm {

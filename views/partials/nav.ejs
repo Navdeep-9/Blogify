@@ -1,6 +1,7 @@
 <nav class="navbar">
   <% if(locals.user){ %>
     <div class="container">
+      <h1 class="appheading">Blogify</h1>
       <img src="/user/<%=user.image %>" style="width: 5rem; border-radius: 25%; ">
       <nav class="navigation">
         <a href="/">Home</a>
@@ -12,7 +13,8 @@
         <a href="/blog/myfollowing/<%=user.id%>">Following</a>
       </nav>
       <% } else{ %>
-        <img src="/default/default.png" style="width: 5rem; border-radius: 25%;">
+        <h1 class="appheading">Blogify</h1>
+        <!-- <img src="/default/default.png" style="width: 5rem; border-radius: 25%;"> -->
         <nav class="navigation">
           <a href="/">Home</a>
           <a href="/about">About</a>
