@@ -99,11 +99,10 @@ li{
     margin-top: 10px;
 }
 .dropbtn{
-    transition: 1s ease;
+    transition: .1s ease;
     z-index: 1;
 }
 .dropbtn:hover{
-    transition: 1s ease;
     cursor: pointer;
 }
 .content{
@@ -122,22 +121,22 @@ li{
 }
 
 .top-left {
-    animation: slideInFromTopLeft 2s forwards;
+    animation: slideInFromTopLeft 1.5s forwards;
     animation-delay: 1s;
 }
 
 .top-right {
-    animation: slideInFromTopRight 2s forwards;
+    animation: slideInFromTopRight 1.5s forwards;
     animation-delay: 1s;
 }
 
 .bottom-left {
-    animation: slideInFromBottomLeft 2s forwards;
+    animation: slideInFromBottomLeft 1.5s forwards;
     animation-delay: 1s;
 }
 
 .bottom-right {
-    animation: slideInFromBottomRight 2s forwards;
+    animation: slideInFromBottomRight 1.5s forwards;
     animation-delay: 1s;
 }
 
