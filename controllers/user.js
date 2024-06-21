@@ -275,7 +275,7 @@ async function getuserforforgotpassword(req, res) {
 
     sendmail()
 
-    res.status(200).render('otp');
+    res.status(200).render('otp',{user});
 
 
 }

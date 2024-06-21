@@ -48,6 +48,10 @@ body {
     font-weight: 700;
 
 }
+.forgot-box-input::-webkit-input-placeholder{
+    color: wheat;
+    opacity: .5;
+}
 
 .forgot-box-label {
     font-size: 20px;
