@@ -2,7 +2,7 @@
   <% if(locals.user){ %>
     <div class="container">
       <h1 class="appheading">Blogify</h1>
-      <img src="/user/<%=user.image %>" style="width: 5rem; border-radius: 25%; ">
+      <img src="/user/<%=user.image %>" style="width: 5rem; border-radius: 25%; max-height: 75px; ">
       <nav class="navigation">
         <a href="/">Home</a>
         <a href="/blog/myprofile/<%=user.id%>">My Profile</a>
